@@ -1,0 +1,76 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <!-- Sidebar for search forms -->
+    <div class="col-md-3">
+      <div class="sticky-top">
+        <div class="card mb-4 text-end w-100">
+          <div class="card-header text-end">סינון לפי מחיר</div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control text-end" placeholder="הזן מחיר מ..." name="priceFrom" [(ngModel)]="priceFrom">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control text-end" placeholder="הזן מחיר עד..." name="priceTo" [(ngModel)]="priceTo">
+              </div>
+              <div class="d-grid">
+                <button (click)="filterByPrice(priceFrom, priceTo)" type="button" class="btn btn-primary w-100">סנן לפי מחיר</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card mb-4 text-end w-100">
+          <div class="card-header text-end">סינון לפי שם</div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control text-end" placeholder="הזן שם פרטי" name="firstName" [(ngModel)]="firstName">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control text-end" placeholder="הזן שם משפחה" name="lastName" [(ngModel)]="lastName">
+              </div>
+              <div class="d-grid">
+                <button (click)="filterByName(firstName, lastName)" type="button" class="btn btn-primary w-100">סנן לפי שם</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card mb-4 text-end w-100">
+          <div class="card-header text-end">סינון לפי עיר</div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control text-end" placeholder="הזן עיר" name="city" [(ngModel)]="city">
+              </div>
+              <div class="d-grid">
+                <button (click)="filterByCity(city)" type="button" class="btn btn-primary w-100">סנן לפי עיר</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content for card layout -->
+    <div class="col-md-9">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Card for each item -->
+        <div class="col text-end" *ngFor="let a of ApartmentService.arrApartments">
+          <div class="card h-100">
+            <img [src]="'../assets/' + a.image" class="card-img-top" alt="Image" style="max-height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title text-end">{{ a.name }}</h5>
+              <p class="card-text text-end">{{ a.desc }}</p>
+              <p class="card-text text-end">עיר: {{ a.city }}</p>
+              <p class="card-text text-end">כתובת: {{ a.address }}</p>
+              <p class="card-text text-end">מספר מיטות: {{ a.numOfBeds }}</p>
+              <p class="card-text text-end">תוספים: {{ a.additives }}</p>
+              <p class="card-text text-end">מחיר: {{ a.price }}</p>
+              <p class="card-text text-end">קוד מפרסם: {{ a.advertiserCode }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

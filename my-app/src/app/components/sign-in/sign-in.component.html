@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="max-width: 600px; width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4">Register</h5>
+      <form class="form-group" [formGroup]="myfrm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 text-end">
+          <label for="code" class="form-label">:הכנס קוד</label>
+          <input id="code" class="form-control" type="text" formControlName="code" placeholder="הכנס קוד">
+          <div class="alert-danger" *ngIf="getCode().invalid && (getCode().touched || getCode().dirty)">
+            <p *ngIf="getCode().errors['required']">שדה חובה</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="firstName" class="form-label">:הכנס שם פרטי</label>
+          <input id="firstName" class="form-control" type="text" formControlName="firstName" placeholder="הכנס שם פרטי">
+          <div class="alert-danger" *ngIf="getFirstName().invalid && (getFirstName().touched || getFirstName().dirty)">
+            <p *ngIf="getFirstName().errors['pattern']">שם מכיל אותיות בלבד</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="lastName" class="form-label">:הכנס שם משפחה</label>
+          <input id="lastName" class="form-control" type="text" formControlName="lastName" placeholder="הכנס שם משפחה">
+          <div class="alert-danger" *ngIf="getLastName().invalid && (getLastName().touched || getLastName().dirty)">
+            <p *ngIf="getLastName().errors['pattern']">שם מכיל אותיות בלבד</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="email" class="form-label">:הכנס מייל</label>
+          <input id="email" class="form-control" type="email" formControlName="email" placeholder="הכנס מייל">
+          <div class="alert-danger" *ngIf="getEmail().invalid && (getEmail().touched || getEmail().dirty)">
+            <p *ngIf="getEmail().errors['pattern']">כתובת מייל לא תקינה</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="password" class="form-label">:הכנס סיסמא</label>
+          <input id="password" class="form-control" type="password" formControlName="password" placeholder="הכנס סיסמא">
+          <div class="alert-danger" *ngIf="getPassword().invalid && (getPassword().touched || getPassword().dirty)">
+            <p *ngIf="getPassword().errors['pattern']">סיסמא לא חזקה</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="phone" class="form-label">:הכנס מספר טלפון</label>
+          <input id="phone" class="form-control" type="text" formControlName="phone" placeholder="הכנס מספר טלפון">
+          <div class="alert-danger" *ngIf="getPhone().invalid && (getPhone().touched || getPhone().dirty)">
+            <p *ngIf="getPhone().errors['pattern']">טלפון מכיל מספרים בלבד</p>
+            <p *ngIf="getPhone().errors['maxlength']">מספר ארוך מידי</p>
+            <p *ngIf="getPhone().errors['minlength']">מספר קצר מידי</p>
+          </div>
+        </div>
+        <div class="mb-3 text-end">
+          <label for="secondPhone" class="form-label">:הכנס מספר טלפון נוסף</label>
+          <input id="secondPhone" class="form-control" type="text" formControlName="secondPhone" placeholder="הכנס מספר טלפון נוסף">
+          <div class="alert-danger" *ngIf="getSecondPhone().invalid && (getSecondPhone().touched || getSecondPhone().dirty)">
+            <p *ngIf="getSecondPhone().errors['pattern']">טלפון מכיל מספרים בלבד</p>
+            <p *ngIf="getSecondPhone().errors['maxlength']">מספר ארוך מידי</p>
+            <p *ngIf="getSecondPhone().errors['minlength']">מספר קצר מידי</p>
+          </div>
+        </div>
+        <button [disabled]="this.myfrm.invalid" type="submit" class="btn btn-primary w-100">להרשמה</button>
+      </form>
+    </div>
+  </div>
+</div>

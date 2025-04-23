@@ -1,0 +1,6 @@
+body {
+    background-image: url('/assets/home2.jpg');
+    background-size: cover; /* זה יגרום לתמונה לכסות את כל הרקע */
+    background-position: center; /* זה ימקם את התמונה במרכז */
+    background-repeat: no-repeat; /* זה ימנע מהתמונה לחזור על עצמה */
+  }

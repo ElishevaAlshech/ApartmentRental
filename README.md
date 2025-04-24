@@ -26,6 +26,6 @@ ng serve
 
 תמונות מסך
 ![pic3](images/pic1.png)
-![pic2](images/pic1.png)
-![pic1](images/pic1.png)
+![pic2](images/pic2.png)
+![pic1](images/pic3.png)
 

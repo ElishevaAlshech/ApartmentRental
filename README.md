@@ -25,7 +25,7 @@ ng serve
 ואז לפתוח דפדפן בכתובת: http://localhost:4200
 
 תמונות מסך
-![pic3](images/pic1.png)
+![pic1](images/pic1.png)
 ![pic2](images/pic2.png)
-![pic1](images/pic3.png)
+![pic3](images/pic3.png)
 

@@ -21,7 +21,7 @@
 git clone https://github.com/ElishevaAlshech/ApartmentRental
 cd ApartmentRental
 npm install
-ng serve
+ng serve```
 ואז לפתוח דפדפן בכתובת: http://localhost:4200
 
 תמונות מסך
